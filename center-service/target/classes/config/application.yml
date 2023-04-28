@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    session:
+      timeout: 1800
+
+spring:
+  application:
+    name: easy-star
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+  aop:
+    proxy-target-class: true
+    auto: true
+  cache:
+    type: redis
+  mvc:
+    static-path-pattern: /static/**
+    throw-exception-if-no-handler-found: true
+
+  redis:
+    host: 39.105.101.73
+    port: 63791
+    password: 1qaz@WSX3edc
+    timeout: 1000
+    lettuce:
+      pool:
+        max-active: 100
+        max-wait: -1
+        max-idle: 10
+        min-idle: 0
+    database: 0
+    session:
+      store-type: redis
+  jackson:
+    generator:
+      write-numbers-as-strings: true
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
